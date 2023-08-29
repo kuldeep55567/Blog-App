@@ -16,8 +16,9 @@ The Docker image for the backend application is hosted on Docker Hub. You can pu
 
 After pulling the image, you can run a Docker container using the following command:
 
-   ```sh
    docker run -p 4500:4500 -d kuldeep55567/blog-app-backend:latest
+
+   
 ## Features
 
 1. **User Authentication with RBAC:** Only logged-in users and those having specific roles have the ability to create and publish their own blogs.
