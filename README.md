@@ -17,6 +17,6 @@ The Docker image for the backend application is hosted on Docker Hub. You can pu
 After pulling the image, you can run a Docker container using the following command:
 
 ```sh
-docker run -p 3000:3000 -d kuldeep55567/blog-app-backend:latest
-
+docker run -p 4500:4500 -d kuldeep55567/blog-app-backend:latest
+This will start the blog backend application on port 3000.
    
