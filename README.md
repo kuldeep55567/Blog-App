@@ -2,6 +2,9 @@
 
 This repository contains the backend application for a blog website. Users can perform actions such as login, register, create, edit, delete blogs, and comment on blogs. The application has three levels of authorization: reader, author, and admin.
 
+## Docker Repository
+https://hub.docker.com/repository/docker/kuldeep55567/blog-app-backend/general
+
 ## Docker Image
 
 The Docker image for the backend application is hosted on Docker Hub. You can pull and run the image using the following steps:
