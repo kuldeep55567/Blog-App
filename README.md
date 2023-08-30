@@ -14,6 +14,35 @@ Frontend: https://hub.docker.com/repository/docker/kuldeep55567/blog-app-fronten
 
 Backend: https://hub.docker.com/repository/docker/kuldeep55567/blog-app-backend/
 
+## Features
+
+1. **User Authentication:** Only logged-in users and specific role have the ability to create and publish their own blogs.
+
+2. **JWT Authentication:** User authentication is handled using JSON Web Tokens (JWT) for secure and stateless communication.
+
+3. **Commenting System:** Users can engage in discussions by commenting on blog posts.
+
+4. **Search Functionality:** Users can easily search for their favorite topics or specific blog posts.
+
+5. **Editing your Blogs:** Users can now update their older blogs with new content and add-ons.
+
+6. **Deleting your Blogs:** Users can remove unwanted blogs from the app.
+
+7. **Admin Panel:** Admin only accessible route for managing data.
+
+## Tech Stack
+
+- Node.js: A runtime environment for executing server-side JavaScript code.
+- Express: A minimal and flexible Node.js web application framework.
+- MySQL: A relational database management system for storing blog data.
+- React: A popular JavaScript library for building user interfaces.
+- Docker: Platform to develop, deploy, and run applications using containerization technology.
+- AWS RDS: Relational Database Service offers managed database solutions.
+- AWS EKS: AWS-managed container orchestration for scalable applications.
+- Load Balancer: Distributing traffic across the servers to manage the load.
+- JSON Web Tokens (JWT): A compact, URL-safe means of representing claims between two parties.
+- Sequelize: An ORM (Object-Relational Mapping) for Node.js and MySQL.
+
 ### Running Docker images
 
 Frontend: docker run -p 3000:3000 kuldeep55567/blog-app-frontend
