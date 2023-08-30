@@ -1,0 +1,54 @@
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f7f7f7;
+  color: #2e475d;
+}
+
+.contact-content {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 500px;
+}
+
+.contact-content h1 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+.intro {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  width: 40%;
+  margin: auto;
+
+}
+
+.link {
+  margin: 0.5rem 0;
+}
+
+.link i {
+  margin-right: 0.5rem;
+}
+
+.link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* For font-awesome icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');

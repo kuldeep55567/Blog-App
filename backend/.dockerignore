@@ -1,7 +1,2 @@
 node_modules
-.env
-.git
-dist
-.aws
-.coverage
-.gitignore
+npm-debug.log

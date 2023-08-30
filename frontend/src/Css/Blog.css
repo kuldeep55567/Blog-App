@@ -1,0 +1,151 @@
+.create-blog-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.create-blog-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.categori{
+  font-size: 1.0rem;
+  border-radius: 5px;
+  color: #2e475d;
+}
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.publish {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #009be1;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+#details h1 {
+  color: #2e475d;
+  font-size: 3.0em;
+  text-align: center;
+  width: 60%;
+  margin: auto;
+  margin-top: 50px;
+}
+#flexed{
+  display: flex;
+  width: 60%;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+  color: #2e475d;
+}
+#flexed h3{
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+hr {
+  width: 60%;
+  height: 2px;
+  background-color: #2e475d;
+  margin: auto;
+  margin-top: 30px;
+}
+.loader{
+  text-align: center;
+  font-size: 50px;
+  margin-top: 100px;
+}
+#details p {
+  width: 60%;
+  margin: auto;
+  color: #2e475d;
+  font-size: 20px;
+  line-height: 2.0em;
+}
+
+#comment {
+  color: #2e475d;
+  margin: auto;
+
+}
+
+#comment h2 {
+  font-size: 2.5em;
+  text-align: center;
+  color: #009be1;
+}
+
+.names {
+  width: 60%;
+  margin: auto;
+}
+
+.names h4 {
+  text-align: end;
+  padding: 10px;
+}
+
+.names p {
+  font-size: 1.5em;
+  padding: 10px;
+}
+
+#comment form {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#comment textarea {
+  width: 100%;
+  font-size: 20px;
+  resize: none;
+  line-height: 2.0rem;
+  height: 2rem;
+  border-radius: 5px 0px 0px 5px;
+  margin-left: 35px;
+}
+
+.be {
+  font-size: 2.0rem;
+  text-align: center;
+
+}
+
+#comment button {
+  font-size: 22px;
+  padding: 4px;
+  background-color: #009be1;
+  color: white;
+  border: none;
+  border-radius: 0px 5px 5px 0px;
+}

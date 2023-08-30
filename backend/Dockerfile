@@ -1,7 +1,15 @@
-FROM node:16
+FROM node:18-alpine
+
+RUN npm install -g nodemon
+
 WORKDIR /usr/src/app
-COPY package*.json ./
-RUN npm install express mysql2 cors dotenv bcrypt jsonwebtoken sequelize sequelize-mock body-parser nodemon
+
+COPY package.json .
+
+RUN npm install
+
 COPY . .
+
 EXPOSE 4500
-CMD [ "npx","nodemon", "index.js" ]
+
+CMD [ "npm","run", "dev" ]

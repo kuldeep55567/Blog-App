@@ -7,8 +7,8 @@ const {UserRouter} = require("./Routes/UserRoute")
 const cors = require('cors');
 require("dotenv").config()
 app.use(express.json());
-app.use(logger)
 app.use(cors());
+app.use(logger)
 app.get('/', (req, res) => {
 try {
   res.send('Welcome to the Backend of the Blog App!');

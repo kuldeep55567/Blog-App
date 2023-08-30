@@ -63,7 +63,7 @@ BlogRouter.get('/blogs/:id?', async (req, res) => {
       return res.status(500).json({ message: 'Server Error' });
     }
 });
-BlogRouter.get('/myblogs', authMiddleWare('author'), async (req, res) => {
+BlogRouter.get('/myblogs', authMiddleWare(), async (req, res) => {
   const userId = req.user.id;
   try {
     const blogs = await Blog.findAll({ where: { UserId: userId } });
@@ -74,7 +74,7 @@ BlogRouter.get('/myblogs', authMiddleWare('author'), async (req, res) => {
   }
 });
 
-BlogRouter.post("/blogs", authMiddleWare('author'), async (req, res) => {
+BlogRouter.post("/blogs", authMiddleWare(), async (req, res) => {
     try {
         const { title, content, category } = req.body;
         const userId = req.user.id;
@@ -83,41 +83,45 @@ BlogRouter.post("/blogs", authMiddleWare('author'), async (req, res) => {
             return res.status(404).json({ message: 'User not found' });
         }
         const newBlog = await Blog.create({ title, content, category, UserId: userId, userName:userName});
-        res.status(201).json(newBlog);
+        res.status(201).json({ message: 'Blog post created successfully!', blog: newBlog });
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Error creating blog post' });
     }
 })
 
-BlogRouter.put('/blogs/:id', authMiddleWare('author'), async (req, res) => {
+BlogRouter.put('/blogs/:id', authMiddleWare(), async (req, res) => {
     const blogId = req.params.id;
     const { title, content, category } = req.body;
     try {
-        const blog = await Blog.findByPk(blogId);
-        if (!blog) {
-            return res.status(404).json({ message: 'Blog post not found' });
-        }
-        await blog.update({ title, content, category });
-        res.status(200).json(blog);
+      const updatedPost = await Blog.update(
+        { title, content,category },
+        { where: { id: blogId, UserId: req.user.id } }
+      );
+      if (updatedPost[0] === 1) {
+        res.status(200).json({ message: 'Blog post updated successfully!', updatedPost });
+      } else {
+        res.status(404).json({ message: 'Blog post not found or unauthorized' });
+      }
     } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: 'Error updating blog post' });
+      res.status(500).json({ message: error.message });
     }
 });
 
-BlogRouter.delete('/blogs/:id', authMiddleWare('author'), async (req, res) => {
+BlogRouter.delete('/blogs/:id', authMiddleWare(), async (req, res) => {
     const blogId = req.params.id;
     try {
-        const blog = await Blog.findByPk(blogId);
-        if (!blog) {
-            return res.status(404).json({ message: 'Blog post not found' });
-        }
-        await blog.destroy();
-        res.status(204).json({ message: 'Blog post deleted successfully' });
+      const deletedPost = await Blog.destroy({
+        where: { id: blogId, UserId: req.user.id },
+      });
+      if (deletedPost === 1) {
+        res.status(200).json({ message: 'Blog post deleted successfully!' });
+      } else {
+        res.status(404).json({ message: 'Blog post not found or unauthorized' });
+      }
     } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: 'Error deleting blog post' });
+      console.error(error);
+      res.status(500).json({ message: error.message });
     }
 });
 BlogRouter.post('/blog/:blogId/comment', authMiddleWare(), async (req, res) => {

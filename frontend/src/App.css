@@ -1,0 +1,262 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+
+.navbar__logo img {
+  height: 80px;
+  padding-top: 18px;
+  padding-bottom: 5px;
+}
+
+.navbar ul li {
+  font-size: 25px;
+}
+
+.navbar__links {
+  list-style: none;
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__item {
+  margin-left: 1rem;
+}
+
+.navbar__item a {
+  text-decoration: none;
+  color: #2e475d;
+}
+.navbar__item button{
+  font-size: 25px;
+  background-color: red;
+  text-align: center;
+  align-items: center;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+}
+.navbar__item a:hover {
+  color: #009be1;
+}
+
+.sign-up-container,
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 15vh;
+}
+
+.sign-up-container h2,
+.login-container h2 {
+  font-size: 40px;
+  color:  #009be1;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.sign-up-container label,
+.login-container label {
+  display: block;
+  font-weight: bold;
+}
+
+.sign-up-container input,
+.login-container input {
+  width: 90%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.sign-up-container button,
+.login-container button {
+  background-color:  #009be1;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.sign-up-container button:hover,
+.login-container button:hover {
+  background-color: #042e6f;
+  color: white;
+}
+
+#homepage {
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+#homepage h3 {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  margin-top: 20px;
+  padding: 20px;
+  line-height: 40px;
+}
+
+#container {
+  margin-top: 50px;
+  color: #2e475d;
+}
+
+footer {
+  font-weight: 600;
+  background-color: #2e475d;
+  color: #FF5722;
+  font-size: 20px;
+  text-align: center;
+  position: -webkit-sticky;
+  bottom: 0;
+  width: 100%;
+}
+.profile-section h1{
+text-align: center;
+font-size: 2.8em;
+}
+.profile-section{
+width: 80%;
+margin: auto;
+color: #2e475d;
+margin-top: 50px;
+margin-bottom: 50px;
+}
+.myblog{
+  padding: 20px;
+  line-height: 40px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-top: 20px;
+}
+.myblog h2{
+  font-size: 1.8rem;
+}
+.myblog p{
+  font-size: 1.1rem;
+}
+#id{
+  color: #2e475d;
+}
+.form-group{
+  padding-right: 20px;
+}
+#not{
+  font-size: 30px;
+  text-align: center;
+padding-top: 50px;
+}
+#names{
+  text-align: end;
+}
+.naming{
+  color: #0B8484;
+}
+.under{
+  width: 100%;
+  height: 1px;
+}
+#btns2{
+  display: flex;
+  gap: 20px;
+}
+.delete{
+  font-size: 20px;
+  text-align: center;
+  background-color: red;
+  color: white;
+  padding-inline:10px;
+  border-radius: 5px;
+  border: none;
+}
+.edit{
+  font-size: 20px;
+  text-align: center;
+  background-color: #1be658;
+  color: white;
+  padding-inline:10px;
+  border-radius: 5px;
+  border: none;
+}
+#tobe{
+  display: flex;
+  justify-content: space-between;
+}
+button:hover{
+  cursor: pointer;
+}
+.edit-blog-form button{
+  font-size: 20px;
+  padding: 5px 10px 5px 10px;
+  color: white;
+  background-color: #FF5722;
+  font-weight: 600;
+  border-radius: 5px;
+  border: none;
+}
+#cancel{
+  background-color: red;
+  margin-left: 40px;
+}
+#details h2{
+  text-align: right;
+  width: 60%;
+  margin: auto;
+  color: #2e475d;
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar__links {
+    margin-top: 1rem;
+    width: 95%;
+  
+  }
+.navbar__logo{
+  width: 50%;
+  margin: auto;
+}
+  .navbar__item a{
+    margin: 0;
+    font-size: 1.2rem;
+  }
+#mains{
+border: 2px solid red;
+}
+#details{
+  border: 2px solid red;
+}
+#flexed{
+  flex-direction: column;
+  text-align: center;
+}
+.about-image{
+  display: none;
+}
+.about-container .about-content {
+    width: 100%;
+  }
+}

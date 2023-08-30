@@ -1,0 +1,48 @@
+.admin-panel h1{
+font-size: 3.5rem;
+text-align: center;
+margin-top: 20px;
+color: #009be1;
+
+}
+
+.admin-panel h3{
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 30px;
+    color: #2e475d;
+}
+
+.total{
+    font-size: 2.0rem;
+    padding-left: 20px;
+   padding-top: 20px;
+   color: #2e475d;
+}
+
+.tot{
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    width: 90%;
+    margin: auto
+}
+.changefor{
+    /* border: 2px solid red; */
+    display: flex;
+    width: 70%;
+    justify-content: space-around;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-top: 20px;
+}
+.changefor p{
+    font-size: 2.0rem;
+    width: 50%;
+    color: #2e475d;
+}
+.changefor select{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: none;
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 10px;
+}
