@@ -1,57 +1,120 @@
 # Blog App Backend
 
-This repository contains the backend application for a blog website. Users can perform actions such as login, register, create, edit, delete blogs, and comment on blogs. The application has three levels of authorization: reader, author, and admin.
+Blog is a dynamic platform that empowers creators to share their thoughts, insights, and expertise with the world. With a user-friendly interface, it offers seamless content creation, personalized themes, and easy sharing options, making it the perfect space for connecting and engaging with readers
 
-## Docker Repository
-https://hub.docker.com/repository/docker/kuldeep55567/blog-app-backend/general
+# Deployed URLs
 
-## Docker Image
+Frontend: http://ae01803c38aa2480087f7f2f58a19b83-1169042174.us-east-1.elb.amazonaws.com:3000/
 
-The Docker image for the backend application is hosted on Docker Hub. You can pull and run the image using the following steps:
+Backend: http://aa7af8dae4aef45a6b0552548e89c44a-1061624016.us-east-1.elb.amazonaws.com:4500/
 
-1. **Pull the Docker Image**:
+# Docker Hub
 
-   To pull the Docker image, use the following command:
+Frontend: https://hub.docker.com/repository/docker/kuldeep55567/blog-app-frontend/
 
-   ```sh
-   docker pull kuldeep55567/blog-app-backend:latest
-## Run the Docker Container
+Backend: https://hub.docker.com/repository/docker/kuldeep55567/blog-app-backend/
 
-After pulling the image, you can run a Docker container using the following command:
+### Running Docker images
 
-   docker run -p 4500:4500 -d kuldeep55567/blog-app-backend:latest
+Frontend: docker run -p 3000:3000 kuldeep55567/blog-app-frontend
 
-   
-## Features
+Backend: docker run -p 4500:4500 kuldeep55567/blog-app-backend
 
-1. **User Authentication with RBAC:** Only logged-in users and those having specific roles have the ability to create and publish their own blogs.
+---
 
-2. **JWT Authentication:** User authentication is handled using JSON Web Tokens (JWT) for secure and stateless communication.
+# Steps required to set up and run the application locally
 
-3. **Commenting System:** Users can engage in discussions by commenting on blog posts.
+### `backend`
 
-4. **Search Functionality:** Users can easily search for their favorite topics or specific blog posts.
+1. npm install (to install dependencies)
+2. npm run server (to start the server)
+3. URL- http://localhost:4500/
 
-5. **Editing your Blogs:** Users can now update their older blogs with new content and add-ons.
+---
 
-6. **Deleting your Blogs:** Users can remove unwanted blogs from the app
-## Routes
+### Routes:
 
-### User Routes
+- ### User Routes
 
-- `POST /signup`: Register a new user.
-- `POST /login`: Log in an existing user.
+| METHOD | ENDPOINT       | WHAT IT DOES                                                                          |
+| ------ | -------------- | ------------------------------------------------------------------------------------- |
+| POST   | /register | -> Registers a new User in the database                                                    |
+| POST   | /login    | -> Users can log in with their email and password and by default their role is reader      |
+| GET    | /users    | ->  Get all registered users from database                                                 |
+| PUT    | /users/:id/change-role| -> Admins can only access this route for changing roles of registered users    |
 
-### Blog Post Routes
+- ### Blog Routes
 
-- `GET /blogs/:id?`: Retrieve all blog posts or specific posts by ID. Supports searching by a query parameter.
-- `GET /blog/:blogId/comments`: Get all comments for a specific blog post.
-- `POST /blogs`: Create a new blog post. Requires user authentication.
-- `POST /blog/:blogtId/comment`: Add a comment to a specific blog post. Requires user authentication.
-- `PUT /blogs/:id`: Edit  a specific blog post. Requires user authentication.
-- `DELETE /blogs/:id`: Delete  a specific blog post. Requires user authentication.
+| METHOD | ENDPOINT                    | WHAT IT DOES                                                                    |
+| ------ | --------------------------- | ------------------------------------------------                                |
+| GET    | /blogs/:id                  | -> Get all blogs or filtered blogs with category and with search functionality  |
+| GET    | /myblogs                    | -> get all blogs made by logged in user                                         |
+| POST   | /blogs                      | -> Logged in users can create Blogs                                             |
+| PUT    | /blogs/:id                  | -> Logged in users can update their Blogs                                       |
+| DELETE | /blogs/:id                  | -> Logged in users can delete their Blogs                                       |
 
-### User-Specific Routes
+- ### Comment Routes
 
-- `GET /myblogs`: Retrieve all blog posts created by the logged-in user. Requires user authentication
-   
+| METHOD | ENDPOINT                     | WHAT IT DOES                                            |
+| ------ | ---------------------------- | ------------------------------------------------------- |
+| GET    | /blog/:blogId/comments       | -> Get all comments for a particular blog               |
+| POST   | /blog/:blogId/comment        | -> Logged in users can comment on any blog              |
+
+### `Frontend`
+
+1. npm install (to install dependencies)
+2. npm Start (to start the app)
+3. URL- http://localhost:3000/
+
+---
+
+# How to deploy the application on Amazon EKS?
+
+### `Requirements`
+
+1. Create an account on Docker
+2. Create an account on AWS
+3. Install AWS CLI 
+4. Install Eksctl 
+5. Install kubectl
+
+### `Steps`
+
+1. Dockerize the Application (frontend/backend)
+
+   - Create a Dockerfile and add the docker commands
+
+   - Build Docker Image (docker build -t <user_name>/<image_name>)
+
+   - Run the application as a Docker Container (docker run -p <port>:<port> <user_name>/<image_name>)
+
+   - Push the Docker Image to Docker Hub (docker push <user_name>/<image_name>)
+
+2. Create the Amazon EKS Cluster
+
+   - Install the AWS CLI Tool
+
+   - Configure the Amazon Web Service
+
+     - run command- aws configure (provide the inputs asked)
+
+   - Install the Eksctl tool.
+
+     - Create the Amazon EKS Cluster using Eksctl
+     - run command- eksctl create cluster --name sample-cluster
+
+   - Write Kubernetes Deployment and Service YAML files for both frontend and backend
+
+   - Deploy the Applications
+
+     - kubectl apply -f <backend/frontend>-deployment.yaml
+     - kubectl apply -f <backend/frontend>-service.yaml
+
+   - kubectl get service to access the Application Container
+     - Use the external ID
+     - http://<YOUR_LOAD_BALANCER_ENDPOINT>:< port >/
+
+
+## Contact
+
+For any inquiries, feel free to reach out via email at [kuldeept5567@gmail.com](mailto:kuldeept5567@gmail.com).
