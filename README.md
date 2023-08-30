@@ -24,7 +24,7 @@ Backend: docker run -p 4500:4500 kuldeep55567/blog-app-backend
 
 # Steps required to set up and run the application locally
 
-### `backend`
+### `Backend`
 
 1. npm install (to install dependencies)
 2. npm run server (to start the server)
